@@ -62,17 +62,48 @@
             </div>
         </div>
 
-        <!-- Third Row: Video Swap Control -->
+        <!-- Third Row: Frame Timeline -->
         <div class="row row-swap">
-            <div class="video_swap" data-element="video-swap">
-                <div class="swap-content">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="17 1 21 5 17 9"></polyline>
-                        <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-                        <polyline points="7 23 3 19 7 15"></polyline>
-                        <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-                    </svg>
-                    <span>Swap Videos</span>
+            <div class="video_swap" data-element="frame-timeline">
+                <div class="timeline-container">
+                    <div class="timeline-header">
+                        <span class="timeline-title">Frame Timeline</span>
+                        <div class="timeline-controls">
+                            <button class="timeline-btn" data-action="zoom-in" title="Zoom In">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </button>
+                            <button class="timeline-btn" data-action="zoom-out" title="Zoom Out">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                </svg>
+                            </button>
+                            <button class="timeline-btn" data-action="play-timeline">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                            <button class="timeline-btn" data-action="pause-timeline">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="6" y="4" width="4" height="16"></rect>
+                                    <rect x="14" y="4" width="4" height="16"></rect>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="frames-strip" id="frames-strip">
+                        <!-- Frames will be generated here dynamically -->
+                        <div class="frame-placeholder">Load video to see frames</div>
+                    </div>
+                    <div class="timeline-progress">
+                        <div class="progress-bar" id="timeline-progress-bar"></div>
+                    </div>
                 </div>
             </div>
         </div>
