@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Processing Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- First Row: Time Controls -->
+        <div class="row row-controls">
+            <div class="control-item first_time" data-element="first-time">
+                <label for="first-time-input">Start Time</label>
+                <input type="time" id="first-time-input" step="1">
+            </div>
+            <div class="control-item branch_select" data-element="branch-select">
+                <label for="branch-select-input">Branch</label>
+                <select id="branch-select-input">
+                    <option value="main">Main</option>
+                    <option value="develop">Develop</option>
+                    <option value="feature">Feature</option>
+                </select>
+            </div>
+            <div class="control-item two_time" data-element="two-time">
+                <label for="two-time-input">End Time</label>
+                <input type="time" id="two-time-input" step="1">
+            </div>
+        </div>
+
+        <!-- Second Row: Video Containers -->
+        <div class="row row-videos">
+            <div class="video-container first_video" data-element="first-video">
+                <div class="video-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                        <line x1="7" y1="2" x2="7" y2="22"></line>
+                        <line x1="17" y1="2" x2="17" y2="22"></line>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <line x1="2" y1="7" x2="7" y2="7"></line>
+                        <line x1="2" y1="17" x2="7" y2="17"></line>
+                        <line x1="17" y1="17" x2="22" y2="17"></line>
+                        <line x1="17" y1="7" x2="22" y2="7"></line>
+                    </svg>
+                    <span>First Video</span>
+                </div>
+            </div>
+            <div class="video-container two_video" data-element="two-video">
+                <div class="video-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                        <line x1="7" y1="2" x2="7" y2="22"></line>
+                        <line x1="17" y1="2" x2="17" y2="22"></line>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <line x1="2" y1="7" x2="7" y2="7"></line>
+                        <line x1="2" y1="17" x2="7" y2="17"></line>
+                        <line x1="17" y1="17" x2="22" y2="17"></line>
+                        <line x1="17" y1="7" x2="22" y2="7"></line>
+                    </svg>
+                    <span>Second Video</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Row: Video Swap Control -->
+        <div class="row row-swap">
+            <div class="video_swap" data-element="video-swap">
+                <div class="swap-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="17 1 21 5 17 9"></polyline>
+                        <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                        <polyline points="7 23 3 19 7 15"></polyline>
+                        <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                    </svg>
+                    <span>Swap Videos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fourth Row: Action Buttons -->
+        <div class="row row-actions">
+            <button class="action-btn" data-action="upload" aria-label="Upload video">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <span>Upload</span>
+            </button>
+            <button class="action-btn" data-action="process" aria-label="Process video">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Process</span>
+            </button>
+            <button class="action-btn" data-action="download" aria-label="Download result">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download</span>
+            </button>
+            <button class="action-btn" data-action="clear" aria-label="Clear all">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+                <span>Clear</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="logic.js"></script>
+</body>
+</html>
